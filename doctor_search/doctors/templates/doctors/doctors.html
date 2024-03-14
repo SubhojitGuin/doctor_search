@@ -1,0 +1,18 @@
+{% extends 'doctors/base.html' %}
+
+{% block content %}
+  <h1>Doctors</h1>
+  <ul>
+  {% for doctor in doctors %}
+    <li>
+      <img src="{{ doctor.image.url }}" alt="{{ doctor.name }}" width="200" height="200">
+      <br>
+      <a href="{% url 'doctors:detail' doctor.id %}">{{ doctor.name }}</a>
+      <p>{{ doctor.specialty }}</p>
+      <p>Rs. {{ doctor.fees }}</p>
+    </li>
+  {% empty %}
+    <li>No doctors found.</li>
+  {% endfor %}
+  </ul>
+{% endblock %}

@@ -1,0 +1,7 @@
+{% extends 'appointments/base.html' %}
+
+{% block content %}
+  <h1>Activate Account</h1>
+  <p>Follow this link to activate your account:</p>
+  <a href="{% url 'activate' token=token %}">Activate Account</a>
+{% endblock %}

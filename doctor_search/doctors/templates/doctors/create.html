@@ -1,0 +1,10 @@
+{% extends 'doctors/base.html' %}
+
+{% block content %}
+  <h1>Create a New Doctor Profile</h1>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Create Doctor Profile</button>
+  </form>
+{% endblock %}

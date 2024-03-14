@@ -1,0 +1,34 @@
+{% extends 'doctors/base.html' %}
+
+{% block content %}
+  <h1>{{ doctor.name }}</h1>
+  <img src="{{ doctor.image.url }}" alt="{{ doctor.name }}" width="400" height="400">
+  <p>Specialty: {{ doctor.specialty }}</p>
+  <p>Fees: Rs. {{ doctor.fees }}</p>
+  <p>Qualifications: {{ doctor.education }}</p>
+  <p>Phone: {{ doctor.phone_number }}</p>
+  <p>Email: <a href="mailto:{{doctor.email}}">{{ doctor.email }}</a></p>
+  <p>Description: {{ doctor.description }}</p>
+  <h5>Schedule:</h5>
+  {% if doctor.monday_start_time %}
+    <p>Monday: {{ doctor.monday_start_time }} - {{ doctor.monday_end_time }}</p>
+  {% endif %}
+  {% if doctor.tuesday_start_time %}
+    <p>Tuesday: {{ doctor.tuesday_start_time }} - {{ doctor.tuesday_end_time }}</p>
+  {% endif %}
+  {% if doctor.wednesday_start_time %}
+    <p>Wednesday: {{ doctor.wednesday_start_time }} - {{ doctor.wednesday_end_time }}</p>
+  {% endif %}
+  {% if doctor.thursday_start_time %}
+    <p>Thursday: {{ doctor.thursday_start_time }} - {{ doctor.thursday_end_time }}</p>
+  {% endif %}
+  {% if doctor.friday_start_time %}
+    <p>Friday: {{ doctor.friday_start_time }} - {{ doctor.friday_end_time }}</p>
+  {% endif %}
+  {% if doctor.saturday_start_time %}
+    <p>Saturday: {{ doctor.saturday_start_time }} - {{ doctor.saturday_end_time }}</p>
+  {% endif %}
+  {% if doctor.sunday_start_time %}
+    <p>Sunday: {{ doctor.sunday_start_time }} - {{ doctor.sunday_end_time }}</p>
+  {% endif %}
+{% endblock %}
