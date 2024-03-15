@@ -1,18 +1,31 @@
 {% extends 'doctors/base.html' %}
 
+{% block title %}Doctors{% endblock %}
+
 {% block content %}
-  <h1>Doctors</h1>
-  <ul>
+<h1>Welcome</h1>
+
+
+
+<h2>Doctors</h2>
+
+  <div class="row">
   {% for doctor in doctors %}
-    <li>
-      <img src="{{ doctor.image.url }}" alt="{{ doctor.name }}" width="200" height="200">
-      <br>
-      <a href="{% url 'doctors:detail' doctor.id %}">{{ doctor.name }}</a>
-      <p>{{ doctor.specialty }}</p>
-      <p>Rs. {{ doctor.fees }}</p>
-    </li>
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <img src="{{ doctor.image.url }}" class="card-img-top" alt="{{ doctor.name }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ doctor.name }}</h5>
+          <p class="card-text">{{ doctor.specialty }}</p>
+          <p class="card-text">Rs. {{ doctor.fees }}</p>
+          <a href="{% url 'doctors:detail' doctor.id %}" class="btn btn-primary">Details</a>
+        </div>
+      </div>
+    </div>
   {% empty %}
-    <li>No doctors found.</li>
+    <div class="col-12">
+      <p>No doctors found.</p>
+    </div>
   {% endfor %}
-  </ul>
+  </div>
 {% endblock %}
