@@ -5,14 +5,16 @@
 {% block content %}
   <div class="card mb-4">
     <img src="{{ doctor.image.url }}" class="card-img-top" alt="{{ doctor.name }}">
-    <div class="card-body">
-      <h5 class="card-title">{{ doctor.name }}</h5>
-      <p class="card-text">Specialty: {{ doctor.specialty }}</p>
-      <p class="card-text">Fees: Rs. {{ doctor.fees }}</p>
-      <p class="card-text">Qualifications: {{ doctor.education }}</p>
-      <p class="card-text">Phone: {{ doctor.phone_number }}</p>
+    <div class="card-body" style="text-align: center">
+      <h5 class="card-title doctor-name">{{ doctor.name }}</h5>
+      <p class="card-text doctor-specialty">{{ doctor.specialty }}</p>
+      <p class="card-text">&#x20B9; {{ doctor.fees }}</p>
+      <h6 style="font-size: 1.25rem">Qualifications: </h6>
+      <p class="card-text">{{ doctor.education }}</p>
+      <h6 style="font-size: 1.25rem ">Description: </h6>
+      <p class="card-text">{{ doctor.description }}</p>
+      <p class="card-text">Phone: <a href="tel:+91{{ doctor.phone_number }}">+91-{{ doctor.phone_number }}</a></p>
       <p class="card-text">Email: <a href="mailto:{{doctor.email}}">{{ doctor.email }}</a></p>
-      <p class="card-text">Description: {{ doctor.description }}</p>
       <h5>Schedule:</h5>
       {% if doctor.monday_start_time %}
         <p>Monday: {{ doctor.monday_start_time }} - {{ doctor.monday_end_time }}</p>

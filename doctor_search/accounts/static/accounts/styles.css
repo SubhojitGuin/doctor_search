@@ -29,7 +29,7 @@ body {
 }
 
 .navbar a.active {
-  background-color: #4CAF50;
+  background-color: lightblue;
   color: white;
 }
 
@@ -90,7 +90,7 @@ body {
 }
 
 .search-form button {
-  background-color: #4CAF50;
+  background-color: lightblue;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -99,7 +99,7 @@ body {
 }
 
 .search-form button:hover {
-  background-color: #45a049;
+  background-color: lightblue;
 }
 
 /* Profile page styles */
@@ -130,7 +130,7 @@ body {
 }
 
 .profile-card button {
-  background-color: #4CAF50;
+  background-color: lightblue;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -140,7 +140,7 @@ body {
 }
 
 .profile-card button:hover {
-  background-color: #45a049;
+  background-color: lightblue;
 }
 
 .profile-card button:last-child {

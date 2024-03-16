@@ -12,7 +12,7 @@
     <style>
         #floating-logo {
             position: fixed;
-            bottom: 20px;
+            bottom: 10px;
             right: 20px;
             border: none;
             background: transparent;
@@ -21,7 +21,7 @@
         #iframe-container {
             display: none;
             position: fixed;
-            bottom: 70px;
+            bottom: 90px;
             right: 20px;
             border: 1px solid #ccc;
             background: #fff;
@@ -74,15 +74,20 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function() {
-            $("#floating-logo").click(function() {
-                $("#iframe-container").toggle();
-            });
+          $("#floating-logo").click(function() {
+            $("#iframe-container").toggleClass("expanded");
+            if ($("#iframe-container").hasClass("expanded")) {
+              $("#iframe-container").show();
+            } else {
+              $("#iframe-container").hide();
+            }
+          });
         });
     </script>
     {% endblock %}
 
-    <div id="floating-logo">
-        <img src="{% static 'doctors/logo.jpg' %}" alt="Logo" width="70" height="70">
+    <div id="floating-logo" class="logo-container">
+        <img src="{% static 'doctors/logo.jpg' %}" alt="Logo" class="logo" width="70" height="70">
     </div>
 
     <div id="iframe-container">

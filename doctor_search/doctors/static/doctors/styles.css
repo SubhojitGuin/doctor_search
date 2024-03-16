@@ -29,7 +29,7 @@ body {
 }
 
 .navbar a.active {
-  background-color: #4CAF50;
+  background-color: lightblue;
   color: white;
 }
 
@@ -42,6 +42,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
+  text-align: center;
 }
 
 /* Doctor list styles */
@@ -61,7 +62,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .doctor-card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  background-color: lightblue;
+  transition: transform 0.3s ease;
+  transform: translateY(-5px);
 }
 
 .doctor-name {
@@ -89,5 +93,76 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #iframe-container {
-    display: none;
+  display: none;
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  border: 1px solid #ccc;
+  background: #fff;
+  z-index: 999;
+  padding: 10px;
+  transition: all 0.3s ease;
+  transform: scale(0);
 }
+
+#iframe-container.expanded {
+  transform: scale(1);
+}
+
+.logo-container {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease;
+}
+
+.logo i {
+  font-size: 24px;
+  transition: all 0.5s ease;
+}
+
+.logo-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.logo-container:hover .logo {
+  width: 100%;
+  height: 100%;
+}
+
+.logo-container:hover .logo i {
+  opacity: 0;
+}
+
+.logo-container:hover .logo-content {
+  opacity: 1;
+}
+
+/*.doctor-card:hover {*/
+/*  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);*/
+/*  background-color: lightblue;*/
+/*  transition: transform 0.3s ease;*/
+/*  transform: translateY(-5px);*/
+/*}*/
