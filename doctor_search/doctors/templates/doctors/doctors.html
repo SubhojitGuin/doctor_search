@@ -7,20 +7,22 @@
 
 
 
-<h2>Doctors</h2>
+<!--<h2>Doctors</h2>-->
 
   <div class="row">
   {% for doctor in doctors %}
-    <div class="col-md-4">
-      <div class="card mb-4">
-        <img src="{{ doctor.image.url }}" class="card-img-top" alt="{{ doctor.name }}">
-        <div class="card-body">
-          <h5 class="card-title">{{ doctor.name }}</h5>
-          <p class="card-text">{{ doctor.specialty }}</p>
-          <p class="card-text">Rs. {{ doctor.fees }}</p>
-          <a href="{% url 'doctors:detail' doctor.id %}" class="btn btn-primary">Details</a>
+    <div class="col-md-4 doctor-card">
+      <a href="{% url 'doctors:detail' doctor.id %}">
+        <div class="card mb-4">
+          <img src="{{ doctor.image.url }}" class="card-img-top doctor-image" alt="{{ doctor.name }}">
+          <div class="card-body">
+            <h5 class="card-title doctor-name">{{ doctor.name }}</h5>
+            <p class="card-text doctor-specialty">{{ doctor.specialty }}</p>
+            <p class="card-text">Rs. {{ doctor.fees }}</p>
+  <!--          <a href="{% url 'doctors:detail' doctor.id %}" class="btn btn-primary">Details</a>-->
+          </div>
         </div>
-      </div>
+      </a>
     </div>
   {% empty %}
     <div class="col-12">
